@@ -1,4 +1,6 @@
-#Server-side paid Bundlr loader
+# Server-side paid Bundlr loader
+
+## Github for medium articule: https://medium.com/@rovicher.eth/server-side-paid-uploads-to-arweave-through-bundlr-762788049496
 
 ## A NextJS app
 It shows how to paid with a server account for Clients content uploads 
@@ -21,3 +23,7 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Bundlr Links
+
+The Website [https://bundlr.network/](https://bundlr.network/)
+The Docs [https://docs.bundlr.network/docs/overview](https://docs.bundlr.network/docs/overview)

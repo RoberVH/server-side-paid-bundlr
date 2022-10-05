@@ -44,9 +44,7 @@ export const uploadData = async (remoteBundlr, webBundlr, file, fileData) => {
     {name: "owner", value: webBundlr.current.address }
   ]  
   const price= await remoteBundlr.getPrice(file.size)
-  console.log(file.name,' of ', file.size,' will cost:', utils.formatEther(price.toString()))
   const transaction = remoteBundlr.createTransaction(fileData, { tags })
-  console.log('transaction:', transaction)
   // get signature data
   const signatureData = Buffer.from(await transaction.getSignatureData());
   // get signature signed by the paying server
@@ -57,22 +55,10 @@ export const uploadData = async (remoteBundlr, webBundlr, file, fileData) => {
       body: JSON.stringify({ datatosign: Buffer.from(signatureData).toString("hex") }),
     });
     const resp2= await resp.json()
-    console.log("signed JSON", resp2 )
-    console.log('Server Signed Data:', resp2.signeddata)
     const signed = Buffer.from(resp2.signeddata,"hex")
-    console.log('signed',signed)
-    console.log('signatureData server signed', transaction)
-    console.log('setting signature on transaction')
+  //  add signed signature to transaction
     transaction.setSignature(signed)
-    console.log('transaction', transaction)
-    //transaction.getRaw().set(signed,2)
-    
-    //       // make sure isValid is true - don't worry about isSigned.
-    //   console.log({
-  //  isSigned: await transaction.isSigned(),
-  //  isValid: await transaction.isValid(),
-  // })
-  // if (!await transaction.isValid()) {alert('something went wrong'); return}
+  
   const res = await transaction.upload();
   console.log('res', res)
   return {status:true, txid:res.data.id}

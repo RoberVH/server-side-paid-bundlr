@@ -13,15 +13,8 @@ export default async function handler(req, res) {
       networkConfig.currency,
       networkConfig.serverAccPK
   )  
-  // console.log('-serversigning, serverBundlr curr es', serverBundlr.currency)
-  // console.log('-serversigning, serverBundlr addr es', serverBundlr.address)
-  //console.log('-serversigning, req.body.signatureData es', req.body)
-  console.log('-serversigning, req.body.signatureData es', req.body.datatosign)
   const clientData= Buffer.from(req.body.datatosign,'hex')
   //const datatoSign = Buffer.from(req.body.signaturedata, "hex");
-  console.log('-serversigning, clientData', clientData)
-  console.log('-serversigning, clientData', clientData.length)
-  
   
   try {  
     const signedData = await serverBundlr.currencyConfig.sign(clientData) 
