@@ -71,6 +71,7 @@ export default function Home() {
       setuploading(true)
       const result= await uploadData(remoteBundlr, webBundlr, file, fileData)
       if (result.status) {
+        console.log('result',result)
         setUploads(rest =>[...rest,[result.txid, `https://arweave.net/${result.txid}`]])
         getRmteBal() // finally, display the changed balance of server account
       } else alert('Something went wrong!')

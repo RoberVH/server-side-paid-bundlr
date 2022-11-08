@@ -61,7 +61,9 @@ export const uploadData = async (remoteBundlr, webBundlr, file, fileData) => {
   
   const res = await transaction.upload();
   console.log('res', res)
-  return {status:true, txid:res.data.id}
+  // Note: if running "@bundlr-network/client version 0.9.0 change below line to
+  //return {status:true, txid:res.id}  
+  return {status:true, txid:res.data.id}  
 } catch (error) {
     console.log("Error", error);
     return {status:false}

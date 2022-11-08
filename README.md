@@ -1,6 +1,10 @@
 # Server-side paid Bundlr loader
 
-## Github for medium articule: https://medium.com/@rovicher.eth/server-side-paid-uploads-to-arweave-through-bundlr-762788049496
+### NOTE: as of 0.9.0   @bundlr-network/client object remoteBundlr.createTransaction(fileData, { tags }) method
+### upload returns directly data object so change line in bundlr.js method upload (see comment in file)
+  
+
+## Github for medium article: https://medium.com/@rovicher.eth/server-side-paid-uploads-to-arweave-through-bundlr-762788049496
 
 ## A NextJS app
 It shows how to paid with a server account for Clients content uploads 
