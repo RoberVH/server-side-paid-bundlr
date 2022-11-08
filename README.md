@@ -1,7 +1,6 @@
 # Server-side paid Bundlr loader
 
-### NOTE: as of 0.9.0   @bundlr-network/client object remoteBundlr.createTransaction(fileData, { tags }) method
-### upload returns directly data object so change line in bundlr.js method upload (see comment in file)
+### NOTE: as of 0.9.0   @bundlr-network/client object remoteBundlr.createTransaction(fileData, { tags }) method upload returns directly data object so change line in bundlr.js method upload (see comment in file)
   
 
 ## Github for medium article: https://medium.com/@rovicher.eth/server-side-paid-uploads-to-arweave-through-bundlr-762788049496
