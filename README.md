@@ -1,9 +1,9 @@
 # Server-side paid Bundlr loader
 
-### NOTE: as of 0.9.0   @bundlr-network/client object remoteBundlr.createTransaction(fileData, { tags }) method upload returns directly data object so change line in bundlr.js method upload (see comment in file)
+#### NOTE: as of 0.9.0   @bundlr-network/client object remoteBundlr.createTransaction(fileData, { tags }) method upload returns directly data object so change line in bundlr.js method upload (see comment in file)
   
 
-## Github for medium article: https://medium.com/@rovicher.eth/server-side-paid-uploads-to-arweave-through-bundlr-762788049496
+#### Github for medium article: https://medium.com/@rovicher.eth/server-side-paid-uploads-to-arweave-through-bundlr-762788049496
 
 ## A NextJS app
 It shows how to paid with a server account for Clients content uploads 
@@ -21,7 +21,8 @@ Clone project, do npm install, and add your own keys to a .env.local file,
 An .env.local.exampe file is provided as a model, then run the development server
 
 ```
-npm run dev
+yarn install
+yarn dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.

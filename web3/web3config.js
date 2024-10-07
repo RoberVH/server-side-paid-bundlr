@@ -15,7 +15,7 @@
 const web3ConfigDevNet = {
     currency: 'matic',
     serverAccPK : process.env.POLYGON_PVK_ACCOUNT,
-    serverProviderLink: process.env.ALCHEMY_MUMBAI_RPC_URL,
+    serverProviderLink: process.env.ALCHEMY_AMOY_RPC_URL,
     bundlrNetwork:'https://devnet.bundlr.network'
 }
 

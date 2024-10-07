@@ -72,7 +72,8 @@ export default function Home() {
       const result= await uploadData(remoteBundlr, webBundlr, file, fileData)
       if (result.status) {
         console.log('result',result)
-        setUploads(rest =>[...rest,[result.txid, `https://arweave.net/${result.txid}`]])
+        //setUploads(rest =>[...rest,[result.txid, `https://arweave.net/${result.txid}`]])
+        setUploads(rest =>[...rest,[result.txid, `https://gateway.irys.xyz/${result.txid}`]])
         getRmteBal() // finally, display the changed balance of server account
       } else alert('Something went wrong!')
       setuploading(false)
@@ -102,6 +103,7 @@ export default function Home() {
     }
     await window.ethereum.enable();
     provider.current = new providers.Web3Provider(window.ethereum);
+    console.log('provider.current',provider.current)
     await provider.current._ready();
     webBundlr.current = new WebBundlr(
       networkConfig.bundlrNetwork,
@@ -156,7 +158,7 @@ export default function Home() {
                       padding:'0.8em', 
                       marginLeft: "auto", 
                       marginRight: "1em", 
-                      backgroundColor:'#d2e2f4' }}>
+                      backgroundColor:'#d2e2f4', fontSize:'11px' }}>
           <label className={styles.labels} style={{ padding: "0.5em" }}>
             <strong>Web Account: &nbsp;</strong>
             {account.substring(0, 6) +
@@ -186,9 +188,10 @@ export default function Home() {
               </div>
           )}
           </div>
-          <label className={styles.labels} style={{ padding: "0.5em" }}>
+          <label className={styles.labels} style={{ padding: "0.5em;" }}>
             <strong>Network:&nbsp;</strong>{" "}
-            {provider.current.network.name.toUpperCase()}
+            {`ID: ${provider.current.network.chainId} Name: ${provider.current.network.name}`}
+            {console.log('p',provider.current)}
           </label>
           <br></br>
           <label className={styles.labels} style={{ padding: "0.5em" }}>
